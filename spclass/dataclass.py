@@ -2,11 +2,12 @@ from typing import Any
 
 
 class DictAttr(dict):
-    # """ 
-    # A python class to make dictionary element accesible by attribute.
-    # """
+    """ 
+        A python class to make dictionary element accesible by attribute.
+    """
 
     def __getattr__(self, name: str) -> Any:
+        
         """
         Special Function to get value of given key.
 
@@ -23,6 +24,7 @@ class DictAttr(dict):
         return self.get(name)
     
     def __setattr__(self, name: str, value: Any) -> None:
+        
         """
         To set or update attribute to dictionary
 
@@ -37,6 +39,7 @@ class DictAttr(dict):
         self[name] = value
 
     def __repr__(self) -> str:
+        
         """
 
         Returns
@@ -49,6 +52,7 @@ class DictAttr(dict):
         return f"{classname}({_temp})"
     
     def __str__(self) -> str:
+        
         """
         String formater.
 

@@ -1,0 +1,65 @@
+images:
+    - jpg
+    - jpeg
+    - JPG
+    - JPEG
+    - png
+    - PNG
+    - HEIC
+    - IMG
+    - jp2
+    - ps
+    - webp
+    - svg
+movies:
+    - mp4
+    - m4a
+    - mov
+    - MOV
+    - MP4
+    - avi
+    - m4v
+pdfs:
+    - pdf
+    - epub
+compressed:
+    - zip
+    - tar
+    - gz
+    - dmg
+words:
+    - doc
+    - docs
+    - docx
+    - pages
+txt :
+    - txt
+    - log
+    - in
+    - ini
+latex:
+    - tex
+    - bbl
+    - bib
+codes:
+    - c
+    - cpp
+    - pro
+    - py
+    - f90
+    - ipynb
+    - sh
+    - csh
+    - rb
+data:
+    - sav
+    - db
+    - xlx
+    - csv
+    - h5
+    - fits
+    - fts
+    - xlsx
+slides:
+    - pptx
+    - key
