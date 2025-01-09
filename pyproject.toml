@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytools"
+version = "0.0.1"
+description = "Python-based tools to make tasks a little easier."
+authors = [
+    {name = "Bibhuti Kumar Jha", email = "bibhuraushan1@gmail.com"}
+]
+license = {text = "MIT License"}
+readme = "README.md"
+keywords = ["tools", "automation", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/bibhuraushan/pytools"
+
+[project.dependencies]
+# List your dependencies here
+# Example: requests = "^2.25.1"
+
+[project.scripts]
+pytools = "pytools.cli:main"
