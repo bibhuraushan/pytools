@@ -22,7 +22,7 @@ requires-python = ">=3.6"
 [project.urls]
 Homepage = "https://github.com/bibhuraushan/pytools"
 
-[project.dependencies]
+#[project.dependencies]
 # List your dependencies here
 # Example: requests = "^2.25.1"
 

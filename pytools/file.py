@@ -1,8 +1,11 @@
 import os
 import fnmatch
 import numpy as np
+from pathlib import Path
+from fnmatch import fnmatch
 
-
+# use class to get the infor about thr directory by
+# listing everything from it with size and other info.
 class Files:
     def __init__(self, directory=".", pattern="*", hidden=False):
         """
@@ -205,7 +208,6 @@ if __name__ == "__main__":
     print("Extension Stats Dictionary:")
     print(fm.extensions_stats())
 
-
 def file_search(path, fileext=None):
     """
     Search for files with a specific extension in a directory tree.
@@ -223,6 +225,45 @@ def file_search(path, fileext=None):
         for f in file:
             if fileext is None:
                 files.append(os.path.join(dr, f))
-            elif f.endswith(fileext):
+            elif fnmatch(f, fileext):
                 files.append(os.path.join(dr, f))
     return np.sort(files)
+
+import os
+from datetime import datetime
+
+def get_fullpath(date, rootdir="./data", include_day=False, create_dir=False):
+    """
+    Generate the full path for a given datetime object and root directory, 
+    with options to include the day level and create the directory.
+
+    Parameters
+    ----------
+    date : datetime.datetime
+        The datetime object representing the desired date and time.
+    rootdir : str, optional
+        The root directory where the path structure starts. Default is './data'
+    include_day : bool, optional
+        If True, includes the day level in the path. Default is False.
+    create_dir : bool, optional
+        If True, creates the directory if it doesn't exist. Default is False.
+
+    Returns
+    -------
+    str
+        The full path string constructed from the root directory and datetime object.
+    """
+    if not isinstance(date, datetime):
+        raise ValueError("The 'date' parameter must be a datetime object.")
+    
+    # Build the path based on the include_day flag
+    if include_day:
+        full_path = os.path.join(rootdir, f"{date.year:04}", f"{date.month:02}", f"{date.day:02}")
+    else:
+        full_path = os.path.join(rootdir, f"{date.year:04}", f"{date.month:02}")
+
+    # Create the directory if the flag is True
+    if create_dir:
+        os.makedirs(full_path, exist_ok=True)
+
+    return Path(full_path)
